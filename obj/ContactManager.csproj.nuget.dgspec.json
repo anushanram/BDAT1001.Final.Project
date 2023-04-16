@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hpanu\\Desktop\\Web-App\\final-app\\ContactManager.csproj": {}
+    "C:\\Users\\hpanu\\Desktop\\Final-Project\\final-project\\ContactManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hpanu\\Desktop\\Web-App\\final-app\\ContactManager.csproj": {
+    "C:\\Users\\hpanu\\Desktop\\Final-Project\\final-project\\ContactManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hpanu\\Desktop\\Web-App\\final-app\\ContactManager.csproj",
+        "projectUniqueName": "C:\\Users\\hpanu\\Desktop\\Final-Project\\final-project\\ContactManager.csproj",
         "projectName": "ContactManager",
-        "projectPath": "C:\\Users\\hpanu\\Desktop\\Web-App\\final-app\\ContactManager.csproj",
+        "projectPath": "C:\\Users\\hpanu\\Desktop\\Final-Project\\final-project\\ContactManager.csproj",
         "packagesPath": "C:\\Users\\hpanu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hpanu\\Desktop\\Web-App\\final-app\\obj\\",
+        "outputPath": "C:\\Users\\hpanu\\Desktop\\Final-Project\\final-project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hpanu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -79,19 +79,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.15, 6.0.15]"
+              "version": "[6.0.16, 6.0.16]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.15, 6.0.15]"
+              "version": "[6.0.16, 6.0.16]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.15, 6.0.15]"
+              "version": "[6.0.16, 6.0.16]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.15, 6.0.15]"
+              "version": "[6.0.16, 6.0.16]"
             }
           ],
           "frameworkReferences": {
@@ -102,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.105\\RuntimeIdentifierGraph.json"
         }
       }
     }

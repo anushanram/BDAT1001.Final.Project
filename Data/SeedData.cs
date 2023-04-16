@@ -3,56 +3,24 @@ using ContactManager.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-// dotnet aspnet-codegenerator razorpage -m Contact -dc ApplicationDbContext -outDir Pages\Contacts --referenceScriptLibraries
 namespace ContactManager.Data
 {
     public static class SeedData
     {
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-        #region snippet_Initialize
-        public static async Task Initialize(IServiceProvider serviceProvider, string testUserPw)
+        public static async Task Initialize(IServiceProvider serviceProvider, string testUserPw = "")
         {
             using (var context = new ApplicationDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
-                // For sample purposes seed both with the same password.
-                // Password is set with the following:
-                // dotnet user-secrets set SeedUserPW <pw>
-                // The admin user can do anything
-
-                var adminID = await EnsureUser(serviceProvider, testUserPw, "admin@group6.com");
+                var adminID = await EnsureUser(serviceProvider, testUserPw, "admin@team6.com");
                 await EnsureRole(serviceProvider, adminID, Constants.ContactAdministratorsRole);
 
                 // allowed user can create and edit contacts that they create
-                var managerID = await EnsureUser(serviceProvider, testUserPw, "manager@group6.com");
+                var managerID = await EnsureUser(serviceProvider, testUserPw, "manager@team6.com");
                 await EnsureRole(serviceProvider, managerID, Constants.ContactManagersRole);
 
-                SeedDB(context, adminID);
+                SeedDB(context, testUserPw);
             }
-        }
-
-        private static async Task<string> EnsureUser(IServiceProvider serviceProvider,
-                                                    string testUserPw, string UserName)
-        {
-            var userManager = serviceProvider.GetService<UserManager<IdentityUser>>();
-
-            var user = await userManager.FindByNameAsync(UserName);
-            if (user == null)
-            {
-                user = new IdentityUser
-                {
-                    UserName = UserName,
-                    EmailConfirmed = true
-                };
-                await userManager.CreateAsync(user, testUserPw);
-            }
-
-            if (user == null)
-            {
-                throw new Exception("The password is not strong enough!");
-            }
-
-            return user.Id;
         }
 
         private static async Task<IdentityResult> EnsureRole(IServiceProvider serviceProvider,
@@ -89,8 +57,31 @@ namespace ContactManager.Data
 
             return IR;
         }
-        #endregion
-        #region snippet1
+
+        private static async Task<string> EnsureUser(IServiceProvider serviceProvider,
+                                                    string testUserPw, string UserName)
+        {
+            var userManager = serviceProvider.GetService<UserManager<IdentityUser>>();
+
+            var user = await userManager.FindByNameAsync(UserName);
+            if (user == null)
+            {
+                user = new IdentityUser
+                {
+                    UserName = UserName,
+                    EmailConfirmed = true
+                };
+                await userManager.CreateAsync(user, testUserPw);
+            }
+
+            if (user == null)
+            {
+                throw new Exception("The password is probably not strong enough!");
+            }
+
+            return user.Id;
+        }
+
         public static void SeedDB(ApplicationDbContext context, string adminID)
         {
             if (context.Contact.Any())
@@ -99,7 +90,6 @@ namespace ContactManager.Data
             }
 
             context.Contact.AddRange(
-            #region snippet_Contact
                 new Contact
                 {
                     Name = "Debra Garcia",
@@ -107,22 +97,16 @@ namespace ContactManager.Data
                     City = "Redmond",
                     State = "WA",
                     Zip = "10999",
-                    Email = "debra@example.com",
-                    Status = ContactStatus.Approved,
-                    OwnerID = adminID
+                    Email = "debra@example.com"
                 },
-            #endregion
-            #endregion
                 new Contact
                 {
-                    Name = "Mark Manlius",
-                    Address = "1573 49th Avenue",
-                    City = "Kugluktuk",
-                    State = "NT",
-                    Zip = "X0E 0E0",
-                    Email = "mark@example.com",
-                    Status = ContactStatus.Submitted,
-                    OwnerID = adminID
+                    Name = "Thorsten Weinrich",
+                    Address = "5678 1st Ave W",
+                    City = "Redmond",
+                    State = "WA",
+                    Zip = "10999",
+                    Email = "thorsten@example.com"
                 },
                 new Contact
                 {
@@ -131,44 +115,29 @@ namespace ContactManager.Data
                     City = "Redmond",
                     State = "WA",
                     Zip = "10999",
-                    Email = "yuhong@example.com",
-                    Status = ContactStatus.Rejected,
-                    OwnerID = adminID
+                    Email = "yuhong@example.com"
                 },
                 new Contact
                 {
-                    Name = "Carlos Basso",
-                    Address = "853 Lake City Way",
-                    City = "Burnaby",
-                    State = "BC",
-                    Zip = "V5A 2Z6",
-                    Email = "carlos@example.com",
-                    Status = ContactStatus.Submitted,
-                    OwnerID = adminID
+                    Name = "Jon Orton",
+                    Address = "3456 Maple St",
+                    City = "Redmond",
+                    State = "WA",
+                    Zip = "10999",
+                    Email = "jon@example.com"
                 },
                 new Contact
                 {
-                    Name = "Walter Morris",
-                    Address = "2305 St. John Street",
-                    City = "Briercrest",
-                    State = "SK",
-                    Zip = "S4P 3Y2",
-                    Email = "walter@example.com",
-                    OwnerID = adminID
-                },
-                new Contact
-                {
-                    Name = "Oliver Escalera",
-                    Address = "1177 Cork St",
-                    City = "Guelph",
-                    State = "ON",
-                    Zip = "N1H 2W8",
-                    Email = "oliver@example.com",
-                    OwnerID = adminID
+                    Name = "Diliana Alexieva-Bosseva",
+                    Address = "7890 2nd Ave E",
+                    City = "Redmond",
+                    State = "WA",
+                    Zip = "10999",
+                    Email = "diliana@example.com"
                 }
              );
             context.SaveChanges();
         }
+
     }
 }
-#pragma warning restore CS8602 // Dereference of a possibly null reference.

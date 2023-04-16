@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fJtOL1vyxI+7/TjNzCEL6byzRer4TgUTHiSEKyVd/qpu945MurgVucWZKagoaXZBrmzZ03T+i61HX2qB0PWtrA==",
+  "dgSpecHash": "WJZv2hWxHR0pqLRCsCwRPRBg6uF2/0GK1PKkYppkYIg1b0tclX3N05G6l46pveZgu8AqQ8XMxySHwpZeSZPXOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hpanu\\Desktop\\Web-App\\final-app\\ContactManager.csproj",
+  "projectFilePath": "C:\\Users\\hpanu\\Desktop\\Final-Project\\final-project\\ContactManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hpanu\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\hpanu\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
@@ -186,10 +186,10 @@
     "C:\\Users\\hpanu\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
     "C:\\Users\\hpanu\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\hpanu\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\hpanu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.15\\microsoft.windowsdesktop.app.ref.6.0.15.nupkg.sha512",
-    "C:\\Users\\hpanu\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.15\\microsoft.netcore.app.ref.6.0.15.nupkg.sha512",
-    "C:\\Users\\hpanu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.15\\microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
-    "C:\\Users\\hpanu\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.15\\microsoft.netcore.app.host.win-x64.6.0.15.nupkg.sha512"
+    "C:\\Users\\hpanu\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\hpanu\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\hpanu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
+    "C:\\Users\\hpanu\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
   ],
   "logs": []
 }
